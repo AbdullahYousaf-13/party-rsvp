@@ -229,10 +229,10 @@ export default function RsvpSection({ invite }) {
           </div>
 
           <label className="form-field">
-            <span>Dietary Restrictions or Note for {invite.shortName}</span>
+            <span>{attending ? `Dietary Restrictions or Note for ${invite.shortName}` : `Note for ${invite.shortName}`}</span>
             <textarea
               rows={3}
-              placeholder="Allergies, mocktail preferences, or a birthday wish..."
+              placeholder={attending ? 'Allergies, mocktail preferences, or a birthday wish...' : 'Send a birthday wish or let us know what changed...'}
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
             />
